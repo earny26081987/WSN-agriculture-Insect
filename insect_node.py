@@ -42,7 +42,7 @@ LUX_I2C_ADDR = 0x23
 # LoRaWAN identity (AU915 SB2). MUST match the device you create in ChirpStack.
 DEV_EUI      = "70 B3 D5 7E D0 07 78 01"      # assigned DevEUI (unique, != env node)
 APP_EUI      = "00 00 00 00 00 00 00 00"
-APP_KEY      = "22 88 E1 86 8E 00 85 B6 07 DA 23 A8 C0 E2 9A 04"   # <-- PASTE ChirpStack AppKey
+APP_KEY      = "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"   # withheld: paste the device's AppKey from ChirpStack
 
 BAND         = "AU915"
 CHANNELS     = "8-15"                         # sub-band 2

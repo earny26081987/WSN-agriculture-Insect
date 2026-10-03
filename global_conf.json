@@ -103,9 +103,9 @@
         /* GPS configuration */
         "gps_tty_path": "",
         /* GPS reference coordinates */
-        "ref_latitude": -31.8228478,
-        "ref_longitude": 115.8034037,
-        "ref_altitude": 37,
+        "ref_latitude": 0,
+        "ref_longitude": 0,
+        "ref_altitude": 0,
                 "servers": [
                   {
                         "gateway_ID": "00016C001F16188E",

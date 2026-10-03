@@ -19,7 +19,7 @@
   #  * require - Always SSL (skip verification)
   #  * verify-ca - Always SSL (verify that the certificate presented by the server was signed by a trusted CA)
   #  * verify-full - Always SSL (verify that the certification presented by the server was signed by a trusted CA and the server host name matches the one in the certificate)
-  dsn = "postgres://chirpstack:chirpstack@localhost/chirpstack?sslmode=disable"
+  dsn = "postgres://chirpstack:REDACTED@localhost/chirpstack?sslmode=disable"
 
   # Max open connections.
   #
@@ -85,7 +85,7 @@
   # is never exposed. Changing this secret will invalidate all login and API
   # tokens. The following command can be used to generate a random secret:
   #   openssl rand -base64 32
-  secret = "you-must-replace-this"
+  secret = "REDACTED"
 
 
 [integration]

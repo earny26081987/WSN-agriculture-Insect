@@ -3,7 +3,7 @@ from collections import Counter
 from picamera2 import Picamera2
 from picamera2.devices import IMX500
 
-APP_KEY = "E2 9A D7 09 CD 90 93 05 DF C2 32 6B F5 DC 3E 92"
+APP_KEY = "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"   # withheld: paste the device's AppKey from ChirpStack
 DEV_EUI = "2C F7 F1 20 50 20 01 9B"
 APP_EUI = "00 00 00 00 00 00 00 00"
 BAND = "AU915"; CHANNELS = "8-15"; SEND_INTERVAL_S = 60; THRESHOLD = 0.45

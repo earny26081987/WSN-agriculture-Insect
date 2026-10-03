@@ -1,5 +1,5 @@
 import serial, time
-APP_KEY = "E2 9A D7 09 CD 90 93 05 DF C2 32 6B F5 DC 3E 92"
+APP_KEY = "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"   # withheld: paste the device's AppKey from ChirpStack
 DEV_EUI = "2C F7 F1 20 50 20 01 9B"
 APP_EUI = "00 00 00 00 00 00 00 00"
 ser = serial.Serial("/dev/serial0", 9600, timeout=1)
