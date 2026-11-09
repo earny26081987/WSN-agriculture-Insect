@@ -1,0 +1,36 @@
+[logging]
+  level = "info"
+
+[postgresql]
+  dsn = "postgres://chirpstack:chirpstack@localhost/chirpstack?sslmode=disable"
+  max_open_connections = 10
+  min_idle_connections = 0
+  connection_recycling_method = "verified"
+
+[redis]
+  servers = ["redis://localhost/"]
+  cluster = false
+
+[network]
+  net_id = "000000"
+  enabled_regions = ["au915_1"]
+
+[api]
+  bind = "0.0.0.0:8080"
+  secret = "you-must-replace-this"
+
+[integration]
+  enabled = ["mqtt"]
+
+  [integration.mqtt]
+    server = "tcp://localhost:1883/"
+    json = true
+
+  [integration.influxdb]
+    endpoint = "http://localhost:8086/write"
+    db = "chirpstack"
+    username = ""
+    password = ""
+    retention_policy_name = ""
+    precision = "s"
+    version = 1
