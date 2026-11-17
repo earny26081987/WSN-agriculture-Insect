@@ -10,38 +10,7 @@
 # the count as a 5-byte payload (count u16 | conf*100 u8 | lux u16).
 # No image ever leaves the sensor.
 #
-# Changes from insect_node_boxtest.py, all marked [power]:
-#   * camera streams only during the burst (picam2.stop() between cycles);
-#     previously it streamed + ran inference at 5 fps for the whole 15 min
-#   * the record frame and its boxes come from ONE capture request
-#   * dark samples (lux < NIGHT_LUX_FLOOR) skip the camera and send an hourly
-#     heartbeat instead - the trap is unreadable in the dark anyway
-#   * LoRa-E5 sleeps (AT+LOWPOWER) between uplinks; session is kept
-#   * BH1750 in one-shot mode (powers itself down after each reading)
-#   * absolute scheduling: samples stay on the 15-minute grid
-#   * failed join is retried at the next cycle instead of sending unjoined
-#   * optional Wi-Fi window (WIFI_MANAGE) - OFF by default, see note below
-#
-# ---- PREREQUISITES (one-time, on the Pi) --------------------------------
-#   * Hardware UART working (loopback pin8<->pin10 echoes) and login shell off:
-#       sudo raspi-config -> Interface Options -> Serial Port
-#         login shell over serial? NO ;  serial hardware enabled? YES
-#   * pip install pyserial     (picamera2 ships with imx500-all)
-#   * LoRa-E5 wired: VIN->5V(pin2), GND->pin6,
-#     breakout TX->Pi RXD(pin10), breakout RX->Pi TXD(pin8). ANTENNA fitted.
-#   * network.rpk present at MODEL_PATH.
-#   * [power] board-level savings live in /boot/firmware/config.txt, not here:
-#       dtoverlay=disable-bt
-#       dtparam=act_led_trigger=none
-#       dtparam=act_led_activelow=on
-#   * [power] if WIFI_MANAGE = True, run this under nohup / tmux / systemd -
-#     blocking Wi-Fi ends the SSH session that launched it.
-#
-# ---- ChirpStack: register this as its OWN device -------------------------
-#   DevEUI below is ASSIGNED (not the factory value) and is set onto the module
-#   at startup. Register this exact DevEUI in ChirpStack with a NEW AppKey, its
-#   own device profile, and the 5-byte insect codec (bottom of this file).
-# -------------------------------------------------------------------------
+
 
 import time
 import csv
