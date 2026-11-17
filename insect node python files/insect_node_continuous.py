@@ -4,10 +4,10 @@
 # Radio    : Makerverse LoRa-E5 breakout (AT commands) on the Pi hardware UART
 # Network  : AU915 sub-band 2, SF7, OTAA  (same settings that joined the env node)
 #
-# Each cycle: wakes the (warm) IMX500, captures a short burst of frames, counts
+# Each cycle: wakes the  IMX500, captures a short burst of frames, counts
 # insect detections above a confidence threshold on-sensor, takes the MEDIAN
-# across the burst (robust to per-frame jitter), reads the BH1750 lux meter,
-# and uplinks the count as a 5-byte payload (count u16 | conf*100 u8 | lux u16).
+# across the burst, reads the BH1750 lux meter,
+# and uplinks the count as a 5-byte payload (count | conf*100 | lux ).
 # No image ever leaves the sensor.
 #
 # ---- PREREQUISITES (one-time, on the Pi) --------------------------------
