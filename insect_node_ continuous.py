@@ -9,19 +9,7 @@
 # across the burst (robust to per-frame jitter), and uplinks the count as a
 # 3-byte payload. No image ever leaves the sensor.
 #
-# ---- PREREQUISITES (one-time, on the Pi) --------------------------------
-#   * Hardware UART working (loopback pin8<->pin10 echoes) and login shell off:
-#       sudo raspi-config -> Interface Options -> Serial Port
-#         login shell over serial? NO ;  serial hardware enabled? YES
-#   * pip install pyserial     (picamera2 ships with imx500-all)
-#   * LoRa-E5 wired: VIN->5V(pin2), GND->pin6,
-#     breakout TX->Pi RXD(pin10), breakout RX->Pi TXD(pin8). ANTENNA fitted.
-#   * network.rpk present at MODEL_PATH.
-#
-# ---- ChirpStack: register this as its OWN device -------------------------
-#   DevEUI below is ASSIGNED (not the factory value) and is set onto the module
-#   at startup. Register this exact DevEUI in ChirpStack with a NEW AppKey, its
-#   own device profile, and the 3-byte insect codec (bottom of this file).
+
 # -------------------------------------------------------------------------
 
 import time
